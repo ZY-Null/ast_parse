@@ -1,3 +1,6 @@
+# 自定义内容
+test/script/*.cpp.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
