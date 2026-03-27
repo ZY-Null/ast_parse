@@ -51,3 +51,5 @@ def decode_bytes(data: bytes)->BytesDecode:
                 "text": "",
                 "encoding": ""
             })
+
+__all__ = ["decode_bytes"]

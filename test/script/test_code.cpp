@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "gone_with_wind.hpp"
+#include "我滴热情，好像一把火，燃烧了整个XXXX.cxx"
 
 // 全局变量
 int global_counter = 0;

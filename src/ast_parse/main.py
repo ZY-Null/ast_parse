@@ -3,19 +3,12 @@ from pathlib import Path
 from tree_sitter_cpp import language
 from tree_sitter import Node, Language, Parser
 import json
+from ast_parse.public.node_view import TNodeView
 
 
 def dump_node(cur_node: Node, level: int = 0) -> dict:
-    content = {
-        "type": cur_node.type,
-        "named": cur_node.is_named,
-        "code": cur_node.text.decode("utf-8")
-    }
-    for child in cur_node.children:
-        if "child" not in content:
-            content["child"] = []
-        content["child"].append(dump_node(child))
-    return content
+    modelObject = TNodeView.from_node(cur_node)
+    return modelObject.model_dump()
 
 def parse_cpp_file(file: Path):
     if not file.is_file():
