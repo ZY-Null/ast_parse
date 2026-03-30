@@ -1,0 +1,659 @@
+[
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "int global_counter = 0;",
+        "children": [
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "int",
+                "children": []
+            },
+            {
+                "node_type": "init_declarator",
+                "node_id": "",
+                "text": "global_counter = 0",
+                "children": [
+                    {
+                        "node_type": "identifier",
+                        "node_id": "",
+                        "text": "global_counter",
+                        "children": []
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    },
+                    {
+                        "node_type": "number_literal",
+                        "node_id": "",
+                        "text": "0",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "const char* APP_NAME = \"OldApp\";",
+        "children": [
+            {
+                "node_type": "type_qualifier",
+                "node_id": "",
+                "text": "const",
+                "children": [
+                    {
+                        "node_type": "const",
+                        "node_id": "",
+                        "text": "const",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "char",
+                "children": []
+            },
+            {
+                "node_type": "init_declarator",
+                "node_id": "",
+                "text": "* APP_NAME = \"OldApp\"",
+                "children": [
+                    {
+                        "node_type": "pointer_declarator",
+                        "node_id": "",
+                        "text": "* APP_NAME",
+                        "children": [
+                            {
+                                "node_type": "*",
+                                "node_id": "",
+                                "text": "*",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "",
+                                "text": "APP_NAME",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    },
+                    {
+                        "node_type": "string_literal",
+                        "node_id": "",
+                        "text": "\"OldApp\"",
+                        "children": [
+                            {
+                                "node_type": "\"",
+                                "node_id": "",
+                                "text": "\"",
+                                "children": []
+                            },
+                            {
+                                "node_type": "string_content",
+                                "node_id": "",
+                                "text": "OldApp",
+                                "children": []
+                            },
+                            {
+                                "node_type": "\"",
+                                "node_id": "",
+                                "text": "\"",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "static double pi_value = 3.14;",
+        "children": [
+            {
+                "node_type": "storage_class_specifier",
+                "node_id": "",
+                "text": "static",
+                "children": [
+                    {
+                        "node_type": "static",
+                        "node_id": "",
+                        "text": "static",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "double",
+                "children": []
+            },
+            {
+                "node_type": "init_declarator",
+                "node_id": "",
+                "text": "pi_value = 3.14",
+                "children": [
+                    {
+                        "node_type": "identifier",
+                        "node_id": "",
+                        "text": "pi_value",
+                        "children": []
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    },
+                    {
+                        "node_type": "number_literal",
+                        "node_id": "",
+                        "text": "3.14",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "int namespace_var = 100;",
+        "children": [
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "int",
+                "children": []
+            },
+            {
+                "node_type": "init_declarator",
+                "node_id": "",
+                "text": "namespace_var = 100",
+                "children": [
+                    {
+                        "node_type": "identifier",
+                        "node_id": "",
+                        "text": "namespace_var",
+                        "children": []
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    },
+                    {
+                        "node_type": "number_literal",
+                        "node_id": "",
+                        "text": "100",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "int uninit_nsvar;",
+        "children": [
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "int",
+                "children": []
+            },
+            {
+                "node_type": "identifier",
+                "node_id": "",
+                "text": "uninit_nsvar",
+                "children": []
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "uint32_t Alpha::Calculator::used_count = 100;",
+        "children": [
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "uint32_t",
+                "children": []
+            },
+            {
+                "node_type": "init_declarator",
+                "node_id": "",
+                "text": "Alpha::Calculator::used_count = 100",
+                "children": [
+                    {
+                        "node_type": "qualified_identifier",
+                        "node_id": "",
+                        "text": "Alpha::Calculator::used_count",
+                        "children": [
+                            {
+                                "node_type": "namespace_identifier",
+                                "node_id": "",
+                                "text": "Alpha",
+                                "children": []
+                            },
+                            {
+                                "node_type": "::",
+                                "node_id": "",
+                                "text": "::",
+                                "children": []
+                            },
+                            {
+                                "node_type": "qualified_identifier",
+                                "node_id": "",
+                                "text": "Calculator::used_count",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    },
+                    {
+                        "node_type": "number_literal",
+                        "node_id": "",
+                        "text": "100",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "void Bageyalu::OutNsFunction();",
+        "children": [
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "void",
+                "children": []
+            },
+            {
+                "node_type": "function_declarator",
+                "node_id": "",
+                "text": "Bageyalu::OutNsFunction()",
+                "children": [
+                    {
+                        "node_type": "qualified_identifier",
+                        "node_id": "",
+                        "text": "Bageyalu::OutNsFunction",
+                        "children": [
+                            {
+                                "node_type": "namespace_identifier",
+                                "node_id": "",
+                                "text": "Bageyalu",
+                                "children": []
+                            },
+                            {
+                                "node_type": "::",
+                                "node_id": "",
+                                "text": "::",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "",
+                                "text": "OutNsFunction",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": "parameter_list",
+                        "node_id": "",
+                        "text": "()",
+                        "children": [
+                            {
+                                "node_type": "(",
+                                "node_id": "",
+                                "text": "(",
+                                "children": []
+                            },
+                            {
+                                "node_type": ")",
+                                "node_id": "",
+                                "text": ")",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "int Example::staticValue = 100;",
+        "children": [
+            {
+                "node_type": "primitive_type",
+                "node_id": "",
+                "text": "int",
+                "children": []
+            },
+            {
+                "node_type": "init_declarator",
+                "node_id": "",
+                "text": "Example::staticValue = 100",
+                "children": [
+                    {
+                        "node_type": "qualified_identifier",
+                        "node_id": "",
+                        "text": "Example::staticValue",
+                        "children": [
+                            {
+                                "node_type": "namespace_identifier",
+                                "node_id": "",
+                                "text": "Example",
+                                "children": []
+                            },
+                            {
+                                "node_type": "::",
+                                "node_id": "",
+                                "text": "::",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "",
+                                "text": "staticValue",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    },
+                    {
+                        "node_type": "number_literal",
+                        "node_id": "",
+                        "text": "100",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "auto lambda = [](int x) { \n    std::cout << \"Lambda函数: \" << x << std::endl; \n};",
+        "children": [
+            {
+                "node_type": "placeholder_type_specifier",
+                "node_id": "",
+                "text": "auto",
+                "children": [
+                    {
+                        "node_type": "auto",
+                        "node_id": "",
+                        "text": "auto",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "init_declarator",
+                "node_id": "",
+                "text": "lambda = [](int x) { \n    std::cout << \"Lambda函数: \" << x << std::endl; \n}",
+                "children": [
+                    {
+                        "node_type": "identifier",
+                        "node_id": "",
+                        "text": "lambda",
+                        "children": []
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    },
+                    {
+                        "node_type": "lambda_expression",
+                        "node_id": "",
+                        "text": "[](int x) { \n    std::cout << \"Lambda函数: \" << x << std::endl; \n}",
+                        "children": [
+                            {
+                                "node_type": "lambda_capture_specifier",
+                                "node_id": "",
+                                "text": "[]",
+                                "children": []
+                            },
+                            {
+                                "node_type": "abstract_function_declarator",
+                                "node_id": "",
+                                "text": "(int x)",
+                                "children": []
+                            },
+                            {
+                                "node_type": "compound_statement",
+                                "node_id": "",
+                                "text": "{ \n    std::cout << \"Lambda函数: \" << x << std::endl; \n}",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "Alpha::Calculator calc;",
+        "children": [
+            {
+                "node_type": "qualified_identifier",
+                "node_id": "",
+                "text": "Alpha::Calculator",
+                "children": [
+                    {
+                        "node_type": "namespace_identifier",
+                        "node_id": "",
+                        "text": "Alpha",
+                        "children": []
+                    },
+                    {
+                        "node_type": "::",
+                        "node_id": "",
+                        "text": "::",
+                        "children": []
+                    },
+                    {
+                        "node_type": "type_identifier",
+                        "node_id": "",
+                        "text": "Calculator",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "identifier",
+                "node_id": "",
+                "text": "calc",
+                "children": []
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "Example ex;",
+        "children": [
+            {
+                "node_type": "type_identifier",
+                "node_id": "",
+                "text": "Example",
+                "children": []
+            },
+            {
+                "node_type": "identifier",
+                "node_id": "",
+                "text": "ex",
+                "children": []
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "const Example constEx;",
+        "children": [
+            {
+                "node_type": "type_qualifier",
+                "node_id": "",
+                "text": "const",
+                "children": [
+                    {
+                        "node_type": "const",
+                        "node_id": "",
+                        "text": "const",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "type_identifier",
+                "node_id": "",
+                "text": "Example",
+                "children": []
+            },
+            {
+                "node_type": "identifier",
+                "node_id": "",
+                "text": "constEx",
+                "children": []
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    },
+    {
+        "node_type": "declaration",
+        "node_id": "",
+        "text": "Functor func;",
+        "children": [
+            {
+                "node_type": "type_identifier",
+                "node_id": "",
+                "text": "Functor",
+                "children": []
+            },
+            {
+                "node_type": "identifier",
+                "node_id": "",
+                "text": "func",
+                "children": []
+            },
+            {
+                "node_type": ";",
+                "node_id": "",
+                "text": ";",
+                "children": []
+            }
+        ]
+    }
+]

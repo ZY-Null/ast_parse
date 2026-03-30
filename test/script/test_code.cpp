@@ -13,7 +13,8 @@ static double pi_value = 3.14;
 // 命名空间 Alpha
 namespace Alpha {
     int namespace_var = 100;
-    
+    int uninit_nsvar;
+
     void process(int x) {
         std::cout << "Alpha::process(int): " << x << std::endl;
     }
@@ -31,8 +32,10 @@ namespace Alpha {
         double compute(double x) {
             return x * 2.0;
         }
+        static uint32_t used_count;
     };
 }
+uint32_t Alpha::Calculator::used_count = 100;
 
 // 命名空间 Beta
 namespace Beta {

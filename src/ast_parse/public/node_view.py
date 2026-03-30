@@ -3,15 +3,15 @@ from ast_parse.public.node_id import TSNodeId
 from pydantic import BaseModel, Field, PrivateAttr, computed_field
 from tree_sitter import Node
 
-class TNodeView(BaseModel):
+class TsNodeView(BaseModel):
     _node: Node|None = PrivateAttr(default=None)
     node_type: str = Field(..., description="node type")
     node_id: str = Field(..., description="like var name, function name, cls name etc.")
     text: str = Field(..., description="code content")
-    children: list["TNodeView"] = Field(default_factory=list, description="Child Node")
+    children: list["TsNodeView"] = Field(default_factory=list, description="Child Node")
     
     @classmethod
-    def from_node(cls, node: Node) -> "TNodeView":
+    def from_node(cls, node: Node) -> "TsNodeView":
         assert node is not None
         decode_result = decode_bytes(node.text)
         text = ""
