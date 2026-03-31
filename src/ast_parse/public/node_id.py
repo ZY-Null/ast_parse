@@ -14,13 +14,32 @@ class TSNodeId:
     def node_id(self):
         if self._node_ids is None:
             self._node_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
-        if not self._node_ids:
-            return ""
-        else:
-            return self._node_ids[-1]
+        return "::".join(self._node_ids)
+    
+    @staticmethod
+    def lookup_node_namespace_ids(cur_node: Node|None) -> list[str]:
+        target_node_types = [
+            "namespace_definition",
+            "class_specifier",
+            "struct_specifier",
+            "union_specifier",
+            "enum_specifier",
+            "function_definition",
+        ]
+        if cur_node is None:
+            return []
+        cur_name = None
+        if cur_node.type in target_node_types:
+            name_node = cur_node.child_by_field_name("name")
+            if name_node is not None:
+                cur_name = TSNodeId.tool_convert_treesitter_node_byte_text_to_str(name_node)
+        upper_names = TSNodeId.lookup_node_namespace_ids(cur_node=cur_node.parent)
+        if cur_name is not None:
+            upper_names.append(cur_name)
+        return upper_names
 
     @staticmethod
-    def get_treesitter_node_id_entry_intf(node: Node) -> list[str]:
+    def __get_this_node_id_entry(node: Node) -> list[str]:
         node_type = node.type
         if node_type not in TSNodeId._cls_method_cache:
             method_func: Callable[[Node], str] = None
@@ -29,7 +48,16 @@ class TSNodeId:
             TSNodeId._cls_method_cache[node_type] = method_func
         if TSNodeId._cls_method_cache[node_type] is None:
             return []
-        return TSNodeId._cls_method_cache[node_type](node)
+        return TSNodeId._cls_method_cache[node_type](node)        
+
+    @staticmethod
+    def get_treesitter_node_id_entry_intf(node: Node) -> list[str]:
+        self_names = TSNodeId.__get_this_node_id_entry(node=node)
+        if not self_names:
+            return self_names
+        up_names = TSNodeId.lookup_node_namespace_ids(cur_node=node.parent)
+        names = up_names + self_names
+        return names
     
     @staticmethod
     def tool_convert_treesitter_node_byte_text_to_str(node: Node)-> str:
@@ -73,6 +101,13 @@ class TSNodeId:
             return container[node_type](child)
         return []
         
+    @staticmethod
+    def get_child_node_id_by_type(node: Node, target_type: str) -> list[str]:
+        for child in node.children:
+            if child.type != target_type:
+                continue
+            return TSNodeId.__get_this_node_id_entry(child)
+        return []
 
     @staticmethod
     def get_treesitter_node_id_impl_declaration(node: Node)-> list[str]:
@@ -106,19 +141,53 @@ class TSNodeId:
     def get_treesitter_node_id_impl_init_declarator(node: Node)->list[str]:
         """ make child node can get id too """
         return TSNodeId.get_node_id_init_declarator(node=node)
+
     @staticmethod
     def get_treesitter_node_id_impl_function_declarator(node: Node)->list[str]:
         """ make child node can get id too """
         return TSNodeId.get_node_id_function_declarator(node=node)
+
     @staticmethod
     def get_treesitter_node_id_impl_pointer_declarator(node: Node)->list[str]:
         """ make child node can get id too """
         return TSNodeId.get_node_id_pointer_declarator(node=node)
+
     @staticmethod
     def get_treesitter_node_id_impl_identifier(node: Node)->list[str]:
         """ make child node can get id too """
         return TSNodeId.get_node_id_identifier(node=node)
+
     @staticmethod
     def get_treesitter_node_id_impl_qualified_identifier(node: Node)->list[str]:
         """ make child node can get id too """
         return TSNodeId.get_node_id_qualified_identifier(node=node)
+
+    @staticmethod
+    def get_treesitter_node_id_impl_function_definition(node: Node)->list[str]:
+        """ make child node can get id too """
+        return TSNodeId.get_child_node_id_by_type(node=node, target_type="function_declarator")
+
+    @staticmethod
+    def get_treesitter_node_id_impl_class_specifier(node: Node)->list[str]:
+        """ make child node can get id too """
+        return TSNodeId.__get_child_node_id_filter_by_type(node=node, container=TSNodeId._cls_decl_method_cache, prefix="get_node_id_")
+
+    @staticmethod
+    def get_treesitter_node_id_impl_struct_specifier(node: Node)->list[str]:
+        """ make child node can get id too """
+        return TSNodeId.__get_child_node_id_filter_by_type(node=node, container=TSNodeId._cls_decl_method_cache, prefix="get_node_id_")
+
+    @staticmethod
+    def get_node_id_type_identifier(node: Node)->list[str]:
+        """ make child node can get id too """
+        return TSNodeId.tool_convert_treesitter_node_byte_text_to_str(node=node).split(sep="::")
+
+    @staticmethod
+    def get_treesitter_node_id_impl_field_declaration(node: Node)->list[str]:
+        """ make child node can get id too """
+        return TSNodeId.get_child_node_id_by_type(node=node, target_type="field_identifier")
+
+    @staticmethod
+    def get_treesitter_node_id_impl_field_identifier(node: Node)->list[str]:
+        """ make child node can get id too """
+        return TSNodeId.tool_convert_treesitter_node_byte_text_to_str(node=node).split(sep="::")

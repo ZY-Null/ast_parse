@@ -23,7 +23,7 @@ def copy_subnode_level(src_node:TsNodeView, level: int = 0) -> TsNodeView:
 
 def do_work():
     root = do_parse()
-    nodes = collect_certain_type(root, "declaration")
+    nodes = collect_certain_type(root, "function_declarator")
     new_nodes = [copy_subnode_level(node) for node in nodes]
     datas = [node.model_dump() for node in new_nodes]
     target_file = Path(__file__).parent / Path("script/type_collect.json")

@@ -1,9 +1,51 @@
 // 原始代码 - 包含各种测试场景
 #include <iostream>
+#include <cstdint>
 #include <string>
 #include <vector>
 #include "gone_with_wind.hpp"
 #include "我滴热情，好像一把火，燃烧了整个XXXX.cxx"
+
+class CrtpA;
+
+struct T_TEST
+{
+    uint32_t u1;
+    uint32_t u2;
+    uint32_t u31 : 17;
+    uint32_t u32 : 15;
+    uint64_t v;
+
+    explicit T_TEST() noexcept = default;
+    ~T_TEST() = default;
+
+    void SetU3(uint32_t v1, uint32_t v2);
+};
+
+void T_TEST::SetU3(uint32_t v1, uint32_t v2)
+{
+    u32 = v1;
+    u32 = v2;
+}
+
+template <class Dev>
+class CrtpBase
+{
+public:
+    void DoSth()
+    {
+        Dev *d = static_cast<Dev *>(this);
+        d->DoThis();
+    }
+
+private:
+};
+
+class CrtpA: public CrtpBase<CrtpA>
+{
+public:
+    void DoThis();
+};
 
 // 全局变量
 int global_counter = 0;
@@ -359,4 +401,9 @@ int main() {
     friendFunction(FriendExample());
 
     return 0;
+}
+
+void CrtpA::DoThis()
+{
+    std::cout << "This is my kingdom c*m" << std::endl;
 }

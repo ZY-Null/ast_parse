@@ -1,543 +1,184 @@
 [
     {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "int global_counter = 0;",
+        "node_type": "function_declarator",
+        "node_id": "T_TEST",
+        "text": "T_TEST() noexcept",
         "children": [
-            {
-                "node_type": "primitive_type",
-                "node_id": "",
-                "text": "int",
-                "children": []
-            },
-            {
-                "node_type": "init_declarator",
-                "node_id": "",
-                "text": "global_counter = 0",
-                "children": [
-                    {
-                        "node_type": "identifier",
-                        "node_id": "",
-                        "text": "global_counter",
-                        "children": []
-                    },
-                    {
-                        "node_type": "=",
-                        "node_id": "",
-                        "text": "=",
-                        "children": []
-                    },
-                    {
-                        "node_type": "number_literal",
-                        "node_id": "",
-                        "text": "0",
-                        "children": []
-                    }
-                ]
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
-            }
-        ]
-    },
-    {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "const char* APP_NAME = \"OldApp\";",
-        "children": [
-            {
-                "node_type": "type_qualifier",
-                "node_id": "",
-                "text": "const",
-                "children": [
-                    {
-                        "node_type": "const",
-                        "node_id": "",
-                        "text": "const",
-                        "children": []
-                    }
-                ]
-            },
-            {
-                "node_type": "primitive_type",
-                "node_id": "",
-                "text": "char",
-                "children": []
-            },
-            {
-                "node_type": "init_declarator",
-                "node_id": "",
-                "text": "* APP_NAME = \"OldApp\"",
-                "children": [
-                    {
-                        "node_type": "pointer_declarator",
-                        "node_id": "",
-                        "text": "* APP_NAME",
-                        "children": [
-                            {
-                                "node_type": "*",
-                                "node_id": "",
-                                "text": "*",
-                                "children": []
-                            },
-                            {
-                                "node_type": "identifier",
-                                "node_id": "",
-                                "text": "APP_NAME",
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "node_type": "=",
-                        "node_id": "",
-                        "text": "=",
-                        "children": []
-                    },
-                    {
-                        "node_type": "string_literal",
-                        "node_id": "",
-                        "text": "\"OldApp\"",
-                        "children": [
-                            {
-                                "node_type": "\"",
-                                "node_id": "",
-                                "text": "\"",
-                                "children": []
-                            },
-                            {
-                                "node_type": "string_content",
-                                "node_id": "",
-                                "text": "OldApp",
-                                "children": []
-                            },
-                            {
-                                "node_type": "\"",
-                                "node_id": "",
-                                "text": "\"",
-                                "children": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
-            }
-        ]
-    },
-    {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "static double pi_value = 3.14;",
-        "children": [
-            {
-                "node_type": "storage_class_specifier",
-                "node_id": "",
-                "text": "static",
-                "children": [
-                    {
-                        "node_type": "static",
-                        "node_id": "",
-                        "text": "static",
-                        "children": []
-                    }
-                ]
-            },
-            {
-                "node_type": "primitive_type",
-                "node_id": "",
-                "text": "double",
-                "children": []
-            },
-            {
-                "node_type": "init_declarator",
-                "node_id": "",
-                "text": "pi_value = 3.14",
-                "children": [
-                    {
-                        "node_type": "identifier",
-                        "node_id": "",
-                        "text": "pi_value",
-                        "children": []
-                    },
-                    {
-                        "node_type": "=",
-                        "node_id": "",
-                        "text": "=",
-                        "children": []
-                    },
-                    {
-                        "node_type": "number_literal",
-                        "node_id": "",
-                        "text": "3.14",
-                        "children": []
-                    }
-                ]
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
-            }
-        ]
-    },
-    {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "int namespace_var = 100;",
-        "children": [
-            {
-                "node_type": "primitive_type",
-                "node_id": "",
-                "text": "int",
-                "children": []
-            },
-            {
-                "node_type": "init_declarator",
-                "node_id": "",
-                "text": "namespace_var = 100",
-                "children": [
-                    {
-                        "node_type": "identifier",
-                        "node_id": "",
-                        "text": "namespace_var",
-                        "children": []
-                    },
-                    {
-                        "node_type": "=",
-                        "node_id": "",
-                        "text": "=",
-                        "children": []
-                    },
-                    {
-                        "node_type": "number_literal",
-                        "node_id": "",
-                        "text": "100",
-                        "children": []
-                    }
-                ]
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
-            }
-        ]
-    },
-    {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "int uninit_nsvar;",
-        "children": [
-            {
-                "node_type": "primitive_type",
-                "node_id": "",
-                "text": "int",
-                "children": []
-            },
             {
                 "node_type": "identifier",
-                "node_id": "",
-                "text": "uninit_nsvar",
+                "node_id": "T_TEST",
+                "text": "T_TEST",
                 "children": []
             },
             {
-                "node_type": ";",
+                "node_type": "parameter_list",
                 "node_id": "",
-                "text": ";",
-                "children": []
-            }
-        ]
-    },
-    {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "uint32_t Alpha::Calculator::used_count = 100;",
-        "children": [
-            {
-                "node_type": "primitive_type",
-                "node_id": "",
-                "text": "uint32_t",
-                "children": []
-            },
-            {
-                "node_type": "init_declarator",
-                "node_id": "",
-                "text": "Alpha::Calculator::used_count = 100",
+                "text": "()",
                 "children": [
                     {
-                        "node_type": "qualified_identifier",
+                        "node_type": "(",
                         "node_id": "",
-                        "text": "Alpha::Calculator::used_count",
-                        "children": [
-                            {
-                                "node_type": "namespace_identifier",
-                                "node_id": "",
-                                "text": "Alpha",
-                                "children": []
-                            },
-                            {
-                                "node_type": "::",
-                                "node_id": "",
-                                "text": "::",
-                                "children": []
-                            },
-                            {
-                                "node_type": "qualified_identifier",
-                                "node_id": "",
-                                "text": "Calculator::used_count",
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "node_type": "=",
-                        "node_id": "",
-                        "text": "=",
+                        "text": "(",
                         "children": []
                     },
                     {
-                        "node_type": "number_literal",
+                        "node_type": ")",
                         "node_id": "",
-                        "text": "100",
+                        "text": ")",
                         "children": []
                     }
                 ]
             },
             {
-                "node_type": ";",
+                "node_type": "noexcept",
                 "node_id": "",
-                "text": ";",
-                "children": []
+                "text": "noexcept",
+                "children": [
+                    {
+                        "node_type": "noexcept",
+                        "node_id": "",
+                        "text": "noexcept",
+                        "children": []
+                    }
+                ]
             }
         ]
     },
     {
-        "node_type": "declaration",
+        "node_type": "function_declarator",
         "node_id": "",
-        "text": "void Bageyalu::OutNsFunction();",
+        "text": "~T_TEST()",
         "children": [
             {
-                "node_type": "primitive_type",
+                "node_type": "destructor_name",
                 "node_id": "",
-                "text": "void",
-                "children": []
-            },
-            {
-                "node_type": "function_declarator",
-                "node_id": "",
-                "text": "Bageyalu::OutNsFunction()",
+                "text": "~T_TEST",
                 "children": [
                     {
-                        "node_type": "qualified_identifier",
+                        "node_type": "~",
                         "node_id": "",
-                        "text": "Bageyalu::OutNsFunction",
-                        "children": [
-                            {
-                                "node_type": "namespace_identifier",
-                                "node_id": "",
-                                "text": "Bageyalu",
-                                "children": []
-                            },
-                            {
-                                "node_type": "::",
-                                "node_id": "",
-                                "text": "::",
-                                "children": []
-                            },
-                            {
-                                "node_type": "identifier",
-                                "node_id": "",
-                                "text": "OutNsFunction",
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "node_type": "parameter_list",
-                        "node_id": "",
-                        "text": "()",
-                        "children": [
-                            {
-                                "node_type": "(",
-                                "node_id": "",
-                                "text": "(",
-                                "children": []
-                            },
-                            {
-                                "node_type": ")",
-                                "node_id": "",
-                                "text": ")",
-                                "children": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
-            }
-        ]
-    },
-    {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "int Example::staticValue = 100;",
-        "children": [
-            {
-                "node_type": "primitive_type",
-                "node_id": "",
-                "text": "int",
-                "children": []
-            },
-            {
-                "node_type": "init_declarator",
-                "node_id": "",
-                "text": "Example::staticValue = 100",
-                "children": [
-                    {
-                        "node_type": "qualified_identifier",
-                        "node_id": "",
-                        "text": "Example::staticValue",
-                        "children": [
-                            {
-                                "node_type": "namespace_identifier",
-                                "node_id": "",
-                                "text": "Example",
-                                "children": []
-                            },
-                            {
-                                "node_type": "::",
-                                "node_id": "",
-                                "text": "::",
-                                "children": []
-                            },
-                            {
-                                "node_type": "identifier",
-                                "node_id": "",
-                                "text": "staticValue",
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "node_type": "=",
-                        "node_id": "",
-                        "text": "=",
+                        "text": "~",
                         "children": []
                     },
-                    {
-                        "node_type": "number_literal",
-                        "node_id": "",
-                        "text": "100",
-                        "children": []
-                    }
-                ]
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
-            }
-        ]
-    },
-    {
-        "node_type": "declaration",
-        "node_id": "",
-        "text": "auto lambda = [](int x) { \n    std::cout << \"Lambda函数: \" << x << std::endl; \n};",
-        "children": [
-            {
-                "node_type": "placeholder_type_specifier",
-                "node_id": "",
-                "text": "auto",
-                "children": [
-                    {
-                        "node_type": "auto",
-                        "node_id": "",
-                        "text": "auto",
-                        "children": []
-                    }
-                ]
-            },
-            {
-                "node_type": "init_declarator",
-                "node_id": "",
-                "text": "lambda = [](int x) { \n    std::cout << \"Lambda函数: \" << x << std::endl; \n}",
-                "children": [
                     {
                         "node_type": "identifier",
-                        "node_id": "",
-                        "text": "lambda",
+                        "node_id": "T_TEST",
+                        "text": "T_TEST",
                         "children": []
-                    },
-                    {
-                        "node_type": "=",
-                        "node_id": "",
-                        "text": "=",
-                        "children": []
-                    },
-                    {
-                        "node_type": "lambda_expression",
-                        "node_id": "",
-                        "text": "[](int x) { \n    std::cout << \"Lambda函数: \" << x << std::endl; \n}",
-                        "children": [
-                            {
-                                "node_type": "lambda_capture_specifier",
-                                "node_id": "",
-                                "text": "[]",
-                                "children": []
-                            },
-                            {
-                                "node_type": "abstract_function_declarator",
-                                "node_id": "",
-                                "text": "(int x)",
-                                "children": []
-                            },
-                            {
-                                "node_type": "compound_statement",
-                                "node_id": "",
-                                "text": "{ \n    std::cout << \"Lambda函数: \" << x << std::endl; \n}",
-                                "children": []
-                            }
-                        ]
                     }
                 ]
             },
             {
-                "node_type": ";",
+                "node_type": "parameter_list",
                 "node_id": "",
-                "text": ";",
-                "children": []
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
             }
         ]
     },
     {
-        "node_type": "declaration",
+        "node_type": "function_declarator",
         "node_id": "",
-        "text": "Alpha::Calculator calc;",
+        "text": "SetU3(uint32_t v1, uint32_t v2)",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "SetU3",
+                "text": "SetU3",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(uint32_t v1, uint32_t v2)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "uint32_t v1",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "uint32_t",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "v1",
+                                "text": "v1",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "uint32_t v2",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "uint32_t",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "v2",
+                                "text": "v2",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "T_TEST::SetU3",
+        "text": "T_TEST::SetU3(uint32_t v1, uint32_t v2)",
         "children": [
             {
                 "node_type": "qualified_identifier",
-                "node_id": "",
-                "text": "Alpha::Calculator",
+                "node_id": "T_TEST::SetU3",
+                "text": "T_TEST::SetU3",
                 "children": [
                     {
                         "node_type": "namespace_identifier",
                         "node_id": "",
-                        "text": "Alpha",
+                        "text": "T_TEST",
                         "children": []
                     },
                     {
@@ -547,57 +188,903 @@
                         "children": []
                     },
                     {
-                        "node_type": "type_identifier",
-                        "node_id": "",
-                        "text": "Calculator",
+                        "node_type": "identifier",
+                        "node_id": "SetU3",
+                        "text": "SetU3",
                         "children": []
                     }
                 ]
             },
             {
-                "node_type": "identifier",
+                "node_type": "parameter_list",
                 "node_id": "",
-                "text": "calc",
-                "children": []
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
+                "text": "(uint32_t v1, uint32_t v2)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "uint32_t v1",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "uint32_t",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "v1",
+                                "text": "v1",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "uint32_t v2",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "uint32_t",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "v2",
+                                "text": "v2",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
             }
         ]
     },
     {
-        "node_type": "declaration",
+        "node_type": "function_declarator",
         "node_id": "",
-        "text": "Example ex;",
+        "text": "DoSth()",
         "children": [
             {
-                "node_type": "type_identifier",
-                "node_id": "",
-                "text": "Example",
+                "node_type": "field_identifier",
+                "node_id": "DoSth",
+                "text": "DoSth",
                 "children": []
             },
             {
-                "node_type": "identifier",
+                "node_type": "parameter_list",
                 "node_id": "",
-                "text": "ex",
-                "children": []
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
             }
         ]
     },
     {
-        "node_type": "declaration",
+        "node_type": "function_declarator",
         "node_id": "",
-        "text": "const Example constEx;",
+        "text": "DoThis()",
         "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "DoThis",
+                "text": "DoThis",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "process",
+        "text": "process(int x)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "process",
+                "text": "process",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "helper",
+        "text": "helper()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "helper",
+                "text": "helper",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "add(int a, int b)",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "add",
+                "text": "add",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int a, int b)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int a",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "a",
+                                "text": "a",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int b",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "b",
+                                "text": "b",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "compute(double x)",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "compute",
+                "text": "compute",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(double x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "double x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "double",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "process",
+        "text": "process(const std::string& str)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "process",
+                "text": "process",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(const std::string& str)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "const std::string& str",
+                        "children": [
+                            {
+                                "node_type": "type_qualifier",
+                                "node_id": "",
+                                "text": "const",
+                                "children": []
+                            },
+                            {
+                                "node_type": "qualified_identifier",
+                                "node_id": "std::string",
+                                "text": "std::string",
+                                "children": []
+                            },
+                            {
+                                "node_type": "reference_declarator",
+                                "node_id": "",
+                                "text": "& str",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "display",
+        "text": "display()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "display",
+                "text": "display",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "initialize",
+        "text": "initialize()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "initialize",
+                "text": "initialize",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "process_data",
+        "text": "process_data(int data)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "process_data",
+                "text": "process_data",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int data)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int data",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "data",
+                                "text": "data",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "process_data",
+        "text": "process_data(double data)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "process_data",
+                "text": "process_data",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(double data)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "double data",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "double",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "data",
+                                "text": "data",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "process_data",
+        "text": "process_data(const std::string& data)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "process_data",
+                "text": "process_data",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(const std::string& data)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "const std::string& data",
+                        "children": [
+                            {
+                                "node_type": "type_qualifier",
+                                "node_id": "",
+                                "text": "const",
+                                "children": []
+                            },
+                            {
+                                "node_type": "qualified_identifier",
+                                "node_id": "std::string",
+                                "text": "std::string",
+                                "children": []
+                            },
+                            {
+                                "node_type": "reference_declarator",
+                                "node_id": "",
+                                "text": "& data",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "log(const std::string& message)",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "log",
+                "text": "log",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(const std::string& message)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "const std::string& message",
+                        "children": [
+                            {
+                                "node_type": "type_qualifier",
+                                "node_id": "",
+                                "text": "const",
+                                "children": []
+                            },
+                            {
+                                "node_type": "qualified_identifier",
+                                "node_id": "std::string",
+                                "text": "std::string",
+                                "children": []
+                            },
+                            {
+                                "node_type": "reference_declarator",
+                                "node_id": "",
+                                "text": "& message",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "max(int a, int b)",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "max",
+                "text": "max",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int a, int b)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int a",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "a",
+                                "text": "a",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int b",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "b",
+                                "text": "b",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "old_method()",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "old_method",
+                "text": "old_method",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "DataPoint",
+        "text": "DataPoint(int id, double val)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "DataPoint",
+                "text": "DataPoint",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int id, double val)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int id",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "id",
+                                "text": "id",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "double val",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "double",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "val",
+                                "text": "val",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "test_printf() \n     const",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "test_printf",
+                "text": "test_printf",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
             {
                 "node_type": "type_qualifier",
                 "node_id": "",
@@ -610,49 +1097,2207 @@
                         "children": []
                     }
                 ]
-            },
-            {
-                "node_type": "type_identifier",
-                "node_id": "",
-                "text": "Example",
-                "children": []
-            },
-            {
-                "node_type": "identifier",
-                "node_id": "",
-                "text": "constEx",
-                "children": []
-            },
-            {
-                "node_type": ";",
-                "node_id": "",
-                "text": ";",
-                "children": []
             }
         ]
     },
     {
-        "node_type": "declaration",
+        "node_type": "function_declarator",
         "node_id": "",
-        "text": "Functor func;",
+        "text": "get_value() const",
         "children": [
             {
-                "node_type": "type_identifier",
-                "node_id": "",
-                "text": "Functor",
+                "node_type": "field_identifier",
+                "node_id": "get_value",
+                "text": "get_value",
                 "children": []
             },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "type_qualifier",
+                "node_id": "",
+                "text": "const",
+                "children": [
+                    {
+                        "node_type": "const",
+                        "node_id": "",
+                        "text": "const",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "square",
+        "text": "square(T x)",
+        "children": [
             {
                 "node_type": "identifier",
-                "node_id": "",
-                "text": "func",
+                "node_id": "square",
+                "text": "square",
                 "children": []
             },
             {
-                "node_type": ";",
+                "node_type": "parameter_list",
                 "node_id": "",
-                "text": ";",
+                "text": "(T x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "T x",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "T",
+                                "text": "T",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "increment",
+        "text": "increment(int x)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "increment",
+                "text": "increment",
                 "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "test_printf",
+        "text": "test_printf(const char *fmt, ARGS...args)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "test_printf",
+                "text": "test_printf",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(const char *fmt, ARGS...args)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "const char *fmt",
+                        "children": [
+                            {
+                                "node_type": "type_qualifier",
+                                "node_id": "",
+                                "text": "const",
+                                "children": []
+                            },
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "char",
+                                "children": []
+                            },
+                            {
+                                "node_type": "pointer_declarator",
+                                "node_id": "fmt",
+                                "text": "*fmt",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "variadic_parameter_declaration",
+                        "node_id": "",
+                        "text": "ARGS...args",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "ARGS",
+                                "text": "ARGS",
+                                "children": []
+                            },
+                            {
+                                "node_type": "variadic_declarator",
+                                "node_id": "",
+                                "text": "...args",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "NsFunctiondef",
+        "text": "NsFunctiondef()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "NsFunctiondef",
+                "text": "NsFunctiondef",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "Bageyalu::OutNsFunction",
+        "text": "Bageyalu::OutNsFunction()",
+        "children": [
+            {
+                "node_type": "qualified_identifier",
+                "node_id": "Bageyalu::OutNsFunction",
+                "text": "Bageyalu::OutNsFunction",
+                "children": [
+                    {
+                        "node_type": "namespace_identifier",
+                        "node_id": "",
+                        "text": "Bageyalu",
+                        "children": []
+                    },
+                    {
+                        "node_type": "::",
+                        "node_id": "",
+                        "text": "::",
+                        "children": []
+                    },
+                    {
+                        "node_type": "identifier",
+                        "node_id": "OutNsFunction",
+                        "text": "OutNsFunction",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "Bageyalu::OutNsFunction",
+        "text": "Bageyalu::OutNsFunction()",
+        "children": [
+            {
+                "node_type": "qualified_identifier",
+                "node_id": "Bageyalu::OutNsFunction",
+                "text": "Bageyalu::OutNsFunction",
+                "children": [
+                    {
+                        "node_type": "namespace_identifier",
+                        "node_id": "",
+                        "text": "Bageyalu",
+                        "children": []
+                    },
+                    {
+                        "node_type": "::",
+                        "node_id": "",
+                        "text": "::",
+                        "children": []
+                    },
+                    {
+                        "node_type": "identifier",
+                        "node_id": "OutNsFunction",
+                        "text": "OutNsFunction",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "normalFunction",
+        "text": "normalFunction(int arg)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "normalFunction",
+                "text": "normalFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int arg)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int arg",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "arg",
+                                "text": "arg",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "templateFunction",
+        "text": "templateFunction(T arg)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "templateFunction",
+                "text": "templateFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(T arg)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "T arg",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "T",
+                                "text": "T",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "arg",
+                                "text": "arg",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "memberFunction()",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "memberFunction",
+                "text": "memberFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "memberFunctionWithArg(int val)",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "memberFunctionWithArg",
+                "text": "memberFunctionWithArg",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int val)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int val",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "val",
+                                "text": "val",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "staticFunction()",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "staticFunction",
+                "text": "staticFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "templateMemberFunction",
+        "text": "templateMemberFunction(T arg)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "templateMemberFunction",
+                "text": "templateMemberFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(T arg)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "T arg",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "T",
+                                "text": "T",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "arg",
+                                "text": "arg",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "staticTemplateFunction",
+        "text": "staticTemplateFunction(T arg)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "staticTemplateFunction",
+                "text": "staticTemplateFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(T arg)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "T arg",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "T",
+                                "text": "T",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "arg",
+                                "text": "arg",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "constMemberFunction() const",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "constMemberFunction",
+                "text": "constMemberFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "type_qualifier",
+                "node_id": "",
+                "text": "const",
+                "children": [
+                    {
+                        "node_type": "const",
+                        "node_id": "",
+                        "text": "const",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "overloadedFunction()",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "overloadedFunction",
+                "text": "overloadedFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "overloadedFunction(int x)",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "overloadedFunction",
+                "text": "overloadedFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "getValueRef()",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "getValueRef",
+                "text": "getValueRef",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "getValueConstRef() const",
+        "children": [
+            {
+                "node_type": "field_identifier",
+                "node_id": "getValueConstRef",
+                "text": "getValueConstRef",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "type_qualifier",
+                "node_id": "",
+                "text": "const",
+                "children": [
+                    {
+                        "node_type": "const",
+                        "node_id": "",
+                        "text": "const",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "Example",
+        "text": "Example()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "Example",
+                "text": "Example",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "Example",
+        "text": "Example(int v)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "Example",
+                "text": "Example",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int v)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int v",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "v",
+                                "text": "v",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "~Example()",
+        "children": [
+            {
+                "node_type": "destructor_name",
+                "node_id": "",
+                "text": "~Example",
+                "children": [
+                    {
+                        "node_type": "~",
+                        "node_id": "",
+                        "text": "~",
+                        "children": []
+                    },
+                    {
+                        "node_type": "identifier",
+                        "node_id": "Example",
+                        "text": "Example",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "Example",
+        "text": "Example(Example&& other) noexcept",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "Example",
+                "text": "Example",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(Example&& other)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "Example&& other",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "Example",
+                                "text": "Example",
+                                "children": []
+                            },
+                            {
+                                "node_type": "reference_declarator",
+                                "node_id": "",
+                                "text": "&& other",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "noexcept",
+                "node_id": "",
+                "text": "noexcept",
+                "children": [
+                    {
+                        "node_type": "noexcept",
+                        "node_id": "",
+                        "text": "noexcept",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "operator=(const Example& other)",
+        "children": [
+            {
+                "node_type": "operator_name",
+                "node_id": "",
+                "text": "operator=",
+                "children": [
+                    {
+                        "node_type": "operator",
+                        "node_id": "",
+                        "text": "operator",
+                        "children": []
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(const Example& other)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "const Example& other",
+                        "children": [
+                            {
+                                "node_type": "type_qualifier",
+                                "node_id": "",
+                                "text": "const",
+                                "children": []
+                            },
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "Example",
+                                "text": "Example",
+                                "children": []
+                            },
+                            {
+                                "node_type": "reference_declarator",
+                                "node_id": "",
+                                "text": "& other",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "operator=(Example&& other) noexcept",
+        "children": [
+            {
+                "node_type": "operator_name",
+                "node_id": "",
+                "text": "operator=",
+                "children": [
+                    {
+                        "node_type": "operator",
+                        "node_id": "",
+                        "text": "operator",
+                        "children": []
+                    },
+                    {
+                        "node_type": "=",
+                        "node_id": "",
+                        "text": "=",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(Example&& other)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "Example&& other",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "Example",
+                                "text": "Example",
+                                "children": []
+                            },
+                            {
+                                "node_type": "reference_declarator",
+                                "node_id": "",
+                                "text": "&& other",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "noexcept",
+                "node_id": "",
+                "text": "noexcept",
+                "children": [
+                    {
+                        "node_type": "noexcept",
+                        "node_id": "",
+                        "text": "noexcept",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "templateFunction<std::string>(std::string arg)",
+        "children": [
+            {
+                "node_type": "template_function",
+                "node_id": "",
+                "text": "templateFunction<std::string>",
+                "children": [
+                    {
+                        "node_type": "identifier",
+                        "node_id": "templateFunction",
+                        "text": "templateFunction",
+                        "children": []
+                    },
+                    {
+                        "node_type": "template_argument_list",
+                        "node_id": "",
+                        "text": "<std::string>",
+                        "children": [
+                            {
+                                "node_type": "<",
+                                "node_id": "",
+                                "text": "<",
+                                "children": []
+                            },
+                            {
+                                "node_type": "type_descriptor",
+                                "node_id": "",
+                                "text": "std::string",
+                                "children": []
+                            },
+                            {
+                                "node_type": ">",
+                                "node_id": "",
+                                "text": ">",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(std::string arg)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "std::string arg",
+                        "children": [
+                            {
+                                "node_type": "qualified_identifier",
+                                "node_id": "std::string",
+                                "text": "std::string",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "arg",
+                                "text": "arg",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "operator()(int x) const",
+        "children": [
+            {
+                "node_type": "operator_name",
+                "node_id": "",
+                "text": "operator()",
+                "children": [
+                    {
+                        "node_type": "operator",
+                        "node_id": "",
+                        "text": "operator",
+                        "children": []
+                    },
+                    {
+                        "node_type": "()",
+                        "node_id": "",
+                        "text": "()",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "type_qualifier",
+                "node_id": "",
+                "text": "const",
+                "children": [
+                    {
+                        "node_type": "const",
+                        "node_id": "",
+                        "text": "const",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "",
+        "text": "operator()(T x) const",
+        "children": [
+            {
+                "node_type": "operator_name",
+                "node_id": "",
+                "text": "operator()",
+                "children": [
+                    {
+                        "node_type": "operator",
+                        "node_id": "",
+                        "text": "operator",
+                        "children": []
+                    },
+                    {
+                        "node_type": "()",
+                        "node_id": "",
+                        "text": "()",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(T x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "T x",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "T",
+                                "text": "T",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "type_qualifier",
+                "node_id": "",
+                "text": "const",
+                "children": [
+                    {
+                        "node_type": "const",
+                        "node_id": "",
+                        "text": "const",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "autoReturnFunction",
+        "text": "autoReturnFunction(int x) -> int",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "autoReturnFunction",
+                "text": "autoReturnFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "trailing_return_type",
+                "node_id": "",
+                "text": "-> int",
+                "children": [
+                    {
+                        "node_type": "->",
+                        "node_id": "",
+                        "text": "->",
+                        "children": []
+                    },
+                    {
+                        "node_type": "type_descriptor",
+                        "node_id": "",
+                        "text": "int",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "decltypeFunction",
+        "text": "decltypeFunction(T t, U u) -> decltype(t + u)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "decltypeFunction",
+                "text": "decltypeFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(T t, U u)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "T t",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "T",
+                                "text": "T",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "t",
+                                "text": "t",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "U u",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "U",
+                                "text": "U",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "u",
+                                "text": "u",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "trailing_return_type",
+                "node_id": "",
+                "text": "-> decltype(t + u)",
+                "children": [
+                    {
+                        "node_type": "->",
+                        "node_id": "",
+                        "text": "->",
+                        "children": []
+                    },
+                    {
+                        "node_type": "type_descriptor",
+                        "node_id": "",
+                        "text": "decltype(t + u)",
+                        "children": [
+                            {
+                                "node_type": "decltype",
+                                "node_id": "",
+                                "text": "decltype(t + u)",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "variadicTemplateFunction",
+        "text": "variadicTemplateFunction(Args... args)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "variadicTemplateFunction",
+                "text": "variadicTemplateFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(Args... args)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "variadic_parameter_declaration",
+                        "node_id": "",
+                        "text": "Args... args",
+                        "children": [
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "Args",
+                                "text": "Args",
+                                "children": []
+                            },
+                            {
+                                "node_type": "variadic_declarator",
+                                "node_id": "",
+                                "text": "... args",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "defaultArgFunction",
+        "text": "defaultArgFunction(int x = 10, double y = 3.14)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "defaultArgFunction",
+                "text": "defaultArgFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x = 10, double y = 3.14)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "optional_parameter_declaration",
+                        "node_id": "",
+                        "text": "int x = 10",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            },
+                            {
+                                "node_type": "=",
+                                "node_id": "",
+                                "text": "=",
+                                "children": []
+                            },
+                            {
+                                "node_type": "number_literal",
+                                "node_id": "",
+                                "text": "10",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "optional_parameter_declaration",
+                        "node_id": "",
+                        "text": "double y = 3.14",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "double",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "y",
+                                "text": "y",
+                                "children": []
+                            },
+                            {
+                                "node_type": "=",
+                                "node_id": "",
+                                "text": "=",
+                                "children": []
+                            },
+                            {
+                                "node_type": "number_literal",
+                                "node_id": "",
+                                "text": "3.14",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "inlineFunction",
+        "text": "inlineFunction()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "inlineFunction",
+                "text": "inlineFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "noexceptFunction",
+        "text": "noexceptFunction() noexcept",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "noexceptFunction",
+                "text": "noexceptFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "noexcept",
+                "node_id": "",
+                "text": "noexcept",
+                "children": [
+                    {
+                        "node_type": "noexcept",
+                        "node_id": "",
+                        "text": "noexcept",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "DelegatingConstructor",
+        "text": "DelegatingConstructor()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "DelegatingConstructor",
+                "text": "DelegatingConstructor",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "DelegatingConstructor",
+        "text": "DelegatingConstructor(int x)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "DelegatingConstructor",
+                "text": "DelegatingConstructor",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "DelegatingConstructor",
+        "text": "DelegatingConstructor(int x, int y)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "DelegatingConstructor",
+                "text": "DelegatingConstructor",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(int x, int y)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int x",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "x",
+                                "text": "x",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ",",
+                        "node_id": "",
+                        "text": ",",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "int y",
+                        "children": [
+                            {
+                                "node_type": "primitive_type",
+                                "node_id": "",
+                                "text": "int",
+                                "children": []
+                            },
+                            {
+                                "node_type": "identifier",
+                                "node_id": "y",
+                                "text": "y",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "FriendExample",
+        "text": "FriendExample()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "FriendExample",
+                "text": "FriendExample",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "friendFunction",
+        "text": "friendFunction(const FriendExample& obj)",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "friendFunction",
+                "text": "friendFunction",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "(const FriendExample& obj)",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": "parameter_declaration",
+                        "node_id": "",
+                        "text": "const FriendExample& obj",
+                        "children": [
+                            {
+                                "node_type": "type_qualifier",
+                                "node_id": "",
+                                "text": "const",
+                                "children": []
+                            },
+                            {
+                                "node_type": "type_identifier",
+                                "node_id": "FriendExample",
+                                "text": "FriendExample",
+                                "children": []
+                            },
+                            {
+                                "node_type": "reference_declarator",
+                                "node_id": "",
+                                "text": "& obj",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "main",
+        "text": "main()",
+        "children": [
+            {
+                "node_type": "identifier",
+                "node_id": "main",
+                "text": "main",
+                "children": []
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "node_type": "function_declarator",
+        "node_id": "CrtpA::DoThis",
+        "text": "CrtpA::DoThis()",
+        "children": [
+            {
+                "node_type": "qualified_identifier",
+                "node_id": "CrtpA::DoThis",
+                "text": "CrtpA::DoThis",
+                "children": [
+                    {
+                        "node_type": "namespace_identifier",
+                        "node_id": "",
+                        "text": "CrtpA",
+                        "children": []
+                    },
+                    {
+                        "node_type": "::",
+                        "node_id": "",
+                        "text": "::",
+                        "children": []
+                    },
+                    {
+                        "node_type": "identifier",
+                        "node_id": "DoThis",
+                        "text": "DoThis",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "node_type": "parameter_list",
+                "node_id": "",
+                "text": "()",
+                "children": [
+                    {
+                        "node_type": "(",
+                        "node_id": "",
+                        "text": "(",
+                        "children": []
+                    },
+                    {
+                        "node_type": ")",
+                        "node_id": "",
+                        "text": ")",
+                        "children": []
+                    }
+                ]
             }
         ]
     }
