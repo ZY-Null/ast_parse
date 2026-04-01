@@ -8,6 +8,8 @@ class TsNodeView(BaseModel):
     node_type: str = Field(..., description="node type")
     node_id: str = Field(..., description="like var name, function name, cls name etc.")
     text: str = Field(..., description="code content")
+    src: str = Field(..., description="file or else")
+    line : int = Field(..., description="start line")
     attrs: "NodeAttrs" = Field(default_factory=dict, description="node attrs")
     children: list["TsNodeView"] = Field(default_factory=list, description="Child Node")
 
@@ -67,26 +69,30 @@ class TsNodeView(BaseModel):
                 for key, value in data.items() 
                 if value
             }
-    
+
     @classmethod
-    def from_node(cls, node: Node) -> "TsNodeView":
+    def from_node(cls, node: Node, with_children: bool = True, src: str = "") -> "TsNodeView":
         assert node is not None
         decode_result = decode_bytes(node.text)
         text = ""
         if decode_result.encoding:
             text = decode_result.text
-        
+
         id_getter = TSNodeId(node)
         id = id_getter.node_id
         attrs = TsNodeView.NodeAttrs.from_node(node)
 
-        children = [cls.from_node(child) for child in node.children]
+        children = []
+        if with_children:
+            children = [cls.from_node(child) for child in node.children]
         attrs = {
             "node_type": node.type,
             "node_id": id,
             "text": text,
+            "src": src,
             "attrs": attrs,
-            "children": children
+            "children": children,
+            "line": node.start_point.row + 1,
         }
         return cls.model_validate(attrs)
 
