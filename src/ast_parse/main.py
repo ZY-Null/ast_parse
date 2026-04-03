@@ -1,7 +1,7 @@
 from sys import argv
 from pathlib import Path
 import json
-from ast_parse.modules.parse import parse_with_callback, create_read_callback, create_root_node_view
+from ast_parse.public.parse import parse_with_callback, create_read_callback, create_root_node_view
 
 def parse_cpp_file(file: Path):
     if not file.is_file():

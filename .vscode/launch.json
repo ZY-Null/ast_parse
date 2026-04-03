@@ -11,7 +11,7 @@
             "cwd": "${workspaceFolder}",
             "program": "${cwd}/src/ast_parse/main.py",
             "console": "integratedTerminal",
-            "args": "test/script/test_code.cpp"
+            "args": "test/script/test_functions.cpp"
         },
         {
             "name": "Python Debugger: Current File with Arguments",

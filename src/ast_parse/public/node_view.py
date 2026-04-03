@@ -1,5 +1,6 @@
 from ast_parse.public.byte_decode import decode_bytes
 from ast_parse.public.node_id import TSNodeId
+from ast_parse.public.node_text import TsNodeText
 from pydantic import BaseModel, Field, PrivateAttr, model_serializer, SerializerFunctionWrapHandler
 from tree_sitter import Node
 
@@ -73,10 +74,8 @@ class TsNodeView(BaseModel):
     @classmethod
     def from_node(cls, node: Node, with_children: bool = True, src: str = "") -> "TsNodeView":
         assert node is not None
-        decode_result = decode_bytes(node.text)
-        text = ""
-        if decode_result.encoding:
-            text = decode_result.text
+        text_getter = TsNodeText(node=node)
+        text = text_getter.text
 
         id_getter = TSNodeId(node)
         id = id_getter.node_id

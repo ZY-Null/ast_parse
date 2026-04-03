@@ -1,4 +1,4 @@
-from ast_parse.modules.parse import *
+from ast_parse.public.parse import *
 from sys import argv as input_params
 from pathlib import Path
 import json

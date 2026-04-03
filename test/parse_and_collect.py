@@ -1,4 +1,4 @@
-from ast_parse.modules.parse import parse_code_file, TsNodeView
+from ast_parse.public.parse import parse_code_file, TsNodeView
 from pathlib import Path
 import json
 

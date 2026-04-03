@@ -1,6 +1,32 @@
 from tree_sitter import Node
 from typing import ClassVar, Callable
 from ast_parse.public.byte_decode import decode_bytes
+import copy
+
+def match_name_list(name1: list[str], name2: list[str]) -> int:
+    # 1. 检查空列表情况
+    if not name1 or not name2:
+        return 0
+    
+    # 2. 检查最后一个元素
+    if name1[-1] != name2[-1]:
+        return 0
+    
+    match_point = 1
+    l2_pivot = len(name2) - 2
+    for l1_pivot in range((len(name1) - 1), -1, -1):
+        if l2_pivot < 0:
+            break
+        t_value = name1[l1_pivot]
+        l2_cursor = l2_pivot
+        for l2_index in range(l2_cursor, -1, -1):
+            if name2[l2_index] != t_value:
+                continue
+            match_point += 1
+            l2_pivot = l2_index - 1
+            break
+    return match_point
+
 
 class TSNodeId:
     _cls_method_cache: ClassVar[dict[str, Callable[[Node], str]]] = {}
@@ -15,6 +41,12 @@ class TSNodeId:
         if self._node_ids is None:
             self._node_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
         return "::".join(self._node_ids)
+    
+    @property
+    def node_id_list(self):
+        if self._node_ids is None:
+            self._node_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
+        return copy.deepcopy(self._node_ids)
     
     @staticmethod
     def lookup_node_namespace_ids(cur_node: Node|None) -> list[str]:
@@ -102,12 +134,28 @@ class TSNodeId:
         return []
         
     @staticmethod
-    def get_child_node_id_by_type(node: Node, target_type: str) -> list[str]:
-        for child in node.children:
-            if child.type != target_type:
-                continue
-            return TSNodeId.__get_this_node_id_entry(child)
-        return []
+    def get_child_node_id_by_type(node: Node, target_type: str, recurse: bool = False) -> list[str]:
+        if recurse:
+            def _get_child_node_type_recurse(cur_node: Node, child_type: str) -> Node:
+                for child in cur_node.children:
+                    if child.type == child_type:
+                        return child
+                    else:
+                        child_get = _get_child_node_type_recurse(cur_node=child, child_type=child_type)
+                        if child_get is None:
+                            continue
+                        return child_get
+                return None
+            target_node = _get_child_node_type_recurse(cur_node=node, child_type=target_type)
+            if target_node is None:
+                return []
+            return TSNodeId.__get_this_node_id_entry(target_node)
+        else:
+            for child in node.children:
+                if child.type != target_type:
+                    continue
+                return TSNodeId.__get_this_node_id_entry(child)
+            return []
 
     @staticmethod
     def get_treesitter_node_id_impl_declaration(node: Node)-> list[str]:
@@ -165,7 +213,7 @@ class TSNodeId:
     @staticmethod
     def get_treesitter_node_id_impl_function_definition(node: Node)->list[str]:
         """ make child node can get id too """
-        return TSNodeId.get_child_node_id_by_type(node=node, target_type="function_declarator")
+        return TSNodeId.get_child_node_id_by_type(node=node, target_type="function_declarator", recurse=True)
 
     @staticmethod
     def get_treesitter_node_id_impl_class_specifier(node: Node)->list[str]:

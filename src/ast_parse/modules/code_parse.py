@@ -1,4 +1,4 @@
-from ast_parse.modules.parse import *
+from ast_parse.public.parse import *
 from ast_parse.public.byte_decode import decode_bytes
 from ast_parse.public.node_view import TsNodeView
 from tree_sitter import Tree, Node
