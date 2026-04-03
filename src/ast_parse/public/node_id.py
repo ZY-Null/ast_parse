@@ -34,20 +34,27 @@ class TSNodeId:
     
     def __init__(self, node: Node):
         self._node: Node = node
-        self._node_ids: list[str]| None = None
-        
+        self._node_local_ids: list[str]| None = None
+        self._node_namespace_ids: list[str]|None = None
+
     @property
     def node_id(self):
-        if self._node_ids is None:
-            self._node_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
-        return "::".join(self._node_ids)
-    
+        if self._node_local_ids is None or self._node_namespace_ids is None:
+            self._node_local_ids, self._node_namespace_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
+        return "::".join(self._node_local_ids)
+
     @property
     def node_id_list(self):
-        if self._node_ids is None:
-            self._node_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
-        return copy.deepcopy(self._node_ids)
-    
+        if self._node_local_ids is None or self._node_namespace_ids is None:
+            self._node_local_ids, self._node_namespace_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
+        return copy.deepcopy(self._node_namespace_ids + self._node_local_ids)
+
+    @property
+    def node_full_id(self):
+        if self._node_local_ids is None or self._node_namespace_ids is None:
+            self._node_local_ids, self._node_namespace_ids = self.get_treesitter_node_id_entry_intf(node=self._node)
+        return "::".join(self.node_id_list)
+
     @staticmethod
     def lookup_node_namespace_ids(cur_node: Node|None) -> list[str]:
         target_node_types = [
@@ -83,13 +90,12 @@ class TSNodeId:
         return TSNodeId._cls_method_cache[node_type](node)        
 
     @staticmethod
-    def get_treesitter_node_id_entry_intf(node: Node) -> list[str]:
+    def get_treesitter_node_id_entry_intf(node: Node) -> tuple[list[str], list[str]]:
         self_names = TSNodeId.__get_this_node_id_entry(node=node)
         if not self_names:
-            return self_names
+            return self_names, []
         up_names = TSNodeId.lookup_node_namespace_ids(cur_node=node.parent)
-        names = up_names + self_names
-        return names
+        return self_names, up_names
     
     @staticmethod
     def tool_convert_treesitter_node_byte_text_to_str(node: Node)-> str:

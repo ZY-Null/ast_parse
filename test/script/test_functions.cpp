@@ -1,5 +1,6 @@
+#include <vector>
 #include <type_traits>
-#include "limits"
+#include <limits>
 #include <cstdio>
 #include <cstdint>
 
@@ -51,9 +52,14 @@ T1 PlusOne(T1 a, T2 b)
 }
 
 /* 这个是啥？ */
-template<>
-uint8_t PlusOne<uint8_t, uint16_t>(uint8_t a, uint16_t b);
+template uint8_t PlusOne<uint8_t, uint16_t>(uint8_t a, uint16_t b);
 
+/* 这个是啥？ */
+template<> uint16_t PlusOne<uint16_t, uint16_t>(uint16_t a, uint16_t b);
+
+/* vecvtor? */
+template <typename T>
+using VECT = std::vector<T>;
 
 namespace test_namespace
 {
