@@ -3,6 +3,7 @@ from ast_parse.public.node_id import match_name_list, TSNodeId
 from ast_parse.public.node_text import TsNodeText
 from ast_parse.public.node_view import TsNodeView
 from ast_parse.public.parse import *
+from ast_parse.public.dump_process import DumpProcess
 
 
 __all__ = [
@@ -20,4 +21,5 @@ __all__ = [
     "create_read_callback",
     "is_content_in_file",
     "is_content_in_files",
+    "DumpProcess",
 ]

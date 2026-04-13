@@ -2,8 +2,14 @@ from ast_parse.public import *
 from tree_sitter import Tree, Node
 from pathlib import Path
 from typing import Callable
+from dataclasses import dataclass
 
+@dataclass
+class NodeWithHight:
+    node: Node
+    hight: int
 
+@DumpProcess.ret_value_dumper
 def collect_func_definition_from_prj(symbol: str, prj_path: Path):
     code_files: list[Path] = collect_code_files_from_prj(prj_path=prj_path)
     filtered_files: list[Path] = is_content_in_files(file_paths=code_files, search_content=symbol, whole_word=True, case_sensitive=True, is_regex=False)
@@ -13,8 +19,45 @@ def collect_func_definition_from_prj(symbol: str, prj_path: Path):
         for file in filtered_files
             for node in _get_symbol_nodes_from_file(symbol=symbol, file=file, target_node_types=target_types)
         ]
-    # contents: list[str] = [n.text for n in target_nodes]
     return target_nodes
+
+@DumpProcess.ret_value_dumper
+def collect_code_element_by_pos(file_path: Path, line_num: int):
+    nodes_info: list[NodeWithHight] = _collect_nodes_by_position(file=file_path, line_num=line_num)
+    nodes_info.sort(key=lambda n: n.hight)
+    leaf_nodes = [n.node for n in nodes_info if n.hight == 0]
+    nodes_no_filtered = [get_node_global_parent_node(n) for n in leaf_nodes]
+    nodes = []
+    for n in nodes_no_filtered:
+        if n not in nodes:
+            nodes.append(n)
+    return nodes
+
+def get_node_global_parent_node(node: Node) -> Node:
+    """ get the parent node which is exists in the global field, link function def, global val declaration, etc """
+    target_node = node
+    cur_node = node
+    while cur_node.parent is not None:
+        cur_node = cur_node.parent
+        if is_global_node_type(cur_node):
+            target_node = cur_node
+    return target_node
+
+def is_global_node_type(node: Node) -> bool:
+    valid_types: list[str] = [
+        "preproc_include", # include something
+        "using_declaration", # using namespace, using something
+        "template_declaration",
+        "alias_declaration", # using something = something
+        "type_definition",
+        "declaration",
+        "preproc_def",
+        "preproc_function_def",
+        "function_definition",
+        "class_specifier",
+    ]
+    return node.type in valid_types
+    
 
 def _get_symbol_nodes_from_file(symbol: str, file: Path, target_node_types: list[str]|None = None) -> list[Node]:
     t: Tree = parse_code_file(file=file)
@@ -54,3 +97,41 @@ def collect_code_files_from_prj(prj_path: Path) -> list[Path]:
         elif sub_path.is_dir():
             files.extend(collect_code_files_from_prj(sub_path))
     return files
+
+def _collect_nodes_by_position(file: Path, line_num: int, column_num: int|None)->list[NodeWithHight]:
+    def _collect_node_by_condition(cur_node: Node, condition: Callable[[Node], bool])->tuple[int,list[NodeWithHight]]:
+        result: list[NodeWithHight] = []
+        child_result: list[NodeWithHight] = []
+        child_hight = 0
+        for child in cur_node.children:
+            cur_level, cur_res = _collect_node_by_condition(cur_node=child, condition=condition)
+            child_result.extend(cur_res)
+            if cur_level > child_hight:
+                child_hight = cur_level
+        cur_hight = child_hight + 1
+        if_match = condition(cur_node)
+        if if_match:
+            result.append(NodeWithHight(node=cur_node, hight=cur_hight))
+        result.extend(child_result)
+        return cur_hight, result
+
+    tree = parse_code_file(file=file)
+    root = tree.root_node
+    
+    def _node_contains_position(cur_node: Node) -> bool:
+        row_start = cur_node.start_point.row + 1
+        row_end = cur_node.end_point.row + 1
+        col_start = cur_node.start_point.column + 1
+        col_end = cur_node.end_point.column + 1
+        if row_start > line_num or row_end < line_num:
+            return False
+        if column_num is None:
+            return True
+        if line_num == row_start and column_num < col_start:
+            return False
+        if line_num == row_end and column_num >= col_end:
+            return False
+        return True
+
+    _, result = _collect_node_by_condition(cur_node=root, condition=_node_contains_position)
+    return result
