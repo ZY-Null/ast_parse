@@ -15,6 +15,7 @@ __all__ = [
     "create_read_callback",
     "is_content_in_file",
     "is_content_in_files",
+    "is_contents_in_files",
 ]
 
 def create_root_node_view(tree: Tree) -> TsNodeView:
@@ -237,6 +238,93 @@ def is_content_in_files(
         except Exception as e:
             # 可以选择打印错误，或者静默跳过
             # print(f"无法读取文件 {path_obj}: {e}")
+            continue
+
+    return matched_files
+
+
+def is_contents_in_files(
+    file_paths: List[Union[str, Path]], 
+    search_contents: List[str],  # 修改点：接收列表
+    whole_word: bool = False, 
+    case_sensitive: bool = True,
+    is_regex: bool = False
+) -> List[Path]:
+    """
+    在多个文件中搜索内容，只要包含 search_contents 列表中的任意一个内容，
+    即返回该文件路径。
+
+    参数:
+        file_paths: 文件路径列表 (支持字符串或 pathlib.Path 对象)
+        search_contents: 搜索内容列表 (List[str])
+        whole_word: 是否匹配独立单词
+        case_sensitive: 是否区分大小写
+        is_regex: 输入是否为正则表达式
+
+    返回:
+        List[Path]: 包含匹配内容的文件路径列表
+    """
+    
+    matched_files = []
+    
+    # 1. 构建正则表达式
+    # 核心逻辑：使用正则的 "或" (|) 操作符连接所有关键字
+    
+    if not search_contents:
+        return []
+        
+    pattern_parts = []
+    
+    for content in search_contents:
+        if not content:
+            continue
+            
+        if is_regex:
+            # 如果是正则模式，直接添加，但为了安全建议包裹非捕获组
+            # 防止类似 "a|b" 变成 "(a|b)..." 时破坏优先级
+            pattern_parts.append(f"(?:{content})")
+        else:
+            # 如果是普通文本，先进行转义
+            escaped_content = re.escape(content)
+            if whole_word:
+                escaped_content = r'\b' + escaped_content + r'\b'
+            pattern_parts.append(escaped_content)
+            
+    if not pattern_parts:
+        return []
+
+    # 使用 "|" 连接所有部分，形成 "A|B|C" 的结构
+    final_pattern = "|".join(pattern_parts)
+    
+    # 设置正则标志
+    flags = 0
+    if not case_sensitive:
+        flags |= re.IGNORECASE
+        
+    try:
+        compiled_regex = re.compile(final_pattern, flags)
+    except re.error as e:
+        print(f"正则表达式编译错误: {e}")
+        return []
+
+    # 2. 遍历文件列表
+    for file_path in file_paths:
+        path_obj = Path(file_path)
+        
+        # 检查文件是否存在且是文件
+        if not path_obj.is_file():
+            continue
+            
+        try:
+            # 3. 逐行读取并匹配
+            with open(path_obj, 'r', encoding='utf-8', errors='ignore') as f:
+                for line in f:
+                    if compiled_regex.search(line):
+                        matched_files.append(path_obj)
+                        break  # 当前文件只要匹配到一个，就加入列表并跳出当前文件循环
+                        
+        except Exception as e:
+            # 静默跳过无法读取的文件
             continue
 
     return matched_files

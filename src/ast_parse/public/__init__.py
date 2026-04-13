@@ -21,5 +21,6 @@ __all__ = [
     "create_read_callback",
     "is_content_in_file",
     "is_content_in_files",
+    "is_contents_in_files",
     "DumpProcess",
 ]

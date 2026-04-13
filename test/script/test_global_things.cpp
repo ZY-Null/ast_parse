@@ -11,7 +11,9 @@ typedef DICT_MAPPER = std::map<uint32_t, std::string>;
 typedef void (*FUNC_PTR)(uint32_t a, uint32_t b);
 
 uint32_t global_simple_val_no_init;
-uint32_t global_simple_val = 0x1234;
+uint32_t global_simple_val = 0x1234;uint32 fooGetSomething(){
+    return global_simple_val++;
+}
 
 std::list<uint> vars = {1, 2, 3, 4, 5, 6};
 

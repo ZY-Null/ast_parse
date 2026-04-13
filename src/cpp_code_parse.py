@@ -3,6 +3,12 @@
 from ast_parse import collect_func_definition_from_prj, collect_code_element_by_pos, DumpProcess
 from sys import argv as params
 from pathlib import Path
+import json
+
+def print_json_dump(data):
+    content = json.dumps(data, indent=4, ensure_ascii=False)
+    print(content)
+    return
 
 
 def run_task():
@@ -17,7 +23,7 @@ def run_task():
     if oper_type not in handles:
         valid_types = "\n".join(handles.keys())
         raise KeyError(f"operator type [{oper_type}] not in valid types! shown below:\n{valid_types}")
-    return handles[oper_type](args)
+    return handles[oper_type](*args)
 
 def get_function_by_symbol(*args):
     if len(args) < 2:
@@ -35,6 +41,6 @@ def get_element_by_position(*args):
     DumpProcess.set_process_type("DUMP")
     return collect_code_element_by_pos(file_path=file, line_num=line_num)
 
-
 if __name__ == "__main__":
-    run_task()
+    exc_result = run_task()
+    print_json_dump(exc_result)
