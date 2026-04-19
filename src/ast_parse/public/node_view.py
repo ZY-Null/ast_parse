@@ -93,7 +93,9 @@ class TsNodeView(BaseModel):
             "children": children,
             "line": node.start_point.row + 1,
         }
-        return cls.model_validate(attrs)
+        view = cls.model_validate(attrs)
+        view._node = node
+        return view
 
     @model_serializer(mode='wrap')
     def serialize_exclude_falsy(self, handler: SerializerFunctionWrapHandler) -> dict:

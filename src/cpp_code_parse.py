@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from ast_parse import collect_func_definition_from_prj, collect_code_element_by_pos, DumpProcess
+from ast_parse import collect_func_definition_from_prj, collect_code_element_by_pos, get_function_called_by_target_symbol, DumpProcess
 from sys import argv as params
 from pathlib import Path
 import json
@@ -17,6 +17,7 @@ def run_task():
     handles = {
         "get_symbol": get_function_by_symbol,
         "get_position": get_element_by_position,
+        "get_called": get_function_called_by_target_symbol,
     }
     oper_type = params[1]
     args = params[2:]

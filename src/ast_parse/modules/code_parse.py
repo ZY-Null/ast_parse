@@ -1,7 +1,7 @@
 from ast_parse.public import *
 from tree_sitter import Tree, Node
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Any
 from dataclasses import dataclass
 
 @dataclass
@@ -42,8 +42,32 @@ def collect_code_element_by_pos(file_path: Path, line_num: int):
 @DumpProcess.ret_value_dumper
 def get_function_called_by_target_symbol(symbol: str, prj_path: Path):
     func_impl_views: list[TsNodeView] = collect_functions_def_from_prj(symbols=[symbol], prj_path=prj_path)
-    func_nodes: list[Node] = [view._node for view in func_impl_views]
-    return []
+    called_info = []
+    all_called: list[str] = []
+    for node_view in func_impl_views:
+        cur_data = {}
+        cur_data["view"] = node_view
+        cur_data["called"] = []
+        call_nodes = _get_call_expression_nodes_from_node(node_view._node)
+        for node in call_nodes:
+            called_function_name = _get_node_attr_text(node=node, attr="function")
+            if called_function_name is None:
+                continue
+            name_no_object = called_function_name.split(".")[-1]
+            if name_no_object not in all_called:
+                all_called.append(name_no_object)
+            if called_function_name not in cur_data["called"]:
+                cur_data["called"].append(called_function_name)
+        called_info.append(cur_data)
+    call_function_view = collect_functions_def_from_prj(symbols=all_called, prj_path=prj_path)
+    call_function_info = [{"function_id": view.node_id, "position":f"{view.src}:{view.line}", "function_impl": view.text} for view in call_function_view]
+    result: dict[str, Any] = {
+        "function_info": called_info,
+        "called_impl": call_function_info
+    }
+    return result
+
+
 
 
 def get_node_global_parent_node(node: Node) -> Node:
@@ -70,7 +94,6 @@ def is_global_node_type(node: Node) -> bool:
         "class_specifier",
     ]
     return node.type in valid_types
-    
 
 def _get_symbol_nodes_from_file(symbols: list[str], file: Path, target_node_types: list[str]|None = None) -> list[Node]:
     t: Tree = parse_code_file(file=file)
@@ -88,14 +111,14 @@ def _find_node_by_name(symbol_names: list[str], root_node: Node, target_node_typ
             id_getter = TSNodeId(node=cur_node)
             cur_ids = id_getter.node_id_list
             match_results = [match_name_list(target_name, cur_ids) for target_name in target_names]
-            if any(res !=0 for res in match_result):
+            if any(res !=0 for res in match_results):
                 return [cur_node]
         match_result: list[Node] = []
         for child in cur_node.children:
             match_result.extend(_find_node_impl(target_names=target_names, cur_node=child, type_matcher=type_matcher))
         return match_result
     
-    result = _find_node_impl(target_name=[symbol_name.split("::") for symbol_name in symbol_names], cur_node=root_node, type_matcher=_is_type_match)
+    result = _find_node_impl(target_names=[symbol_name.split("::") for symbol_name in symbol_names], cur_node=root_node, type_matcher=_is_type_match)
     return result
 
 
@@ -147,3 +170,27 @@ def _collect_nodes_by_position(file: Path, line_num: int, column_num: int|None =
 
     _, result = _collect_node_by_condition(cur_node=root, condition=_node_contains_position)
     return result
+
+def _get_node_from_file_by_s_exp(file: Path, s_expression: str, mode: QUERY_MODE = "capture"):
+    tree = parse_code_file(file=file)
+    root = tree.root_node
+    if mode == "capture":
+        result = capture_node(base_node=root, s_expression=s_expression)
+        return result
+    elif mode == "match":
+        result = match_node(base_node=root, s_expression=s_expression)
+        return result
+    return None
+
+def _get_call_expression_nodes_from_node(node: Node) -> list[Node]:
+    result_key = "RESULT"
+    call_expression_s_exp = f"(call_expression) @{result_key}"
+    capture_res = capture_node(base_node=node, s_expression=call_expression_s_exp)
+    result = capture_res.get(result_key, [])
+    return result
+
+def _get_node_attr_text(node: Node, attr: str) -> None|str:
+    sub_node = node.child_by_field_name(attr)
+    if sub_node is None:
+        return None
+    return decode_bytes(sub_node.text).text

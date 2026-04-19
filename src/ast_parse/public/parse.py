@@ -1,8 +1,8 @@
 from pathlib import Path
-from tree_sitter_cpp import language
-from tree_sitter import Tree, Language, Parser
+import tree_sitter_cpp
+from tree_sitter import Tree, Language, Parser, Node, Query, QueryCursor
 from ast_parse.public.node_view import TsNodeView
-from typing import Callable, Tuple, Union, List
+from typing import Callable, Tuple, Union, List, Literal
 import re
 
 __all__ = [
@@ -16,20 +16,28 @@ __all__ = [
     "is_content_in_file",
     "is_content_in_files",
     "is_contents_in_files",
+    "CPP_LANGUAGE",
+    "capture_node",
+    "match_node",
+    "QUERY_MODE",
 ]
+
+CPP_LANGUAGE = Language(tree_sitter_cpp.language())
+
+QUERY_MODE = Literal["capture", "match"]
 
 def create_root_node_view(tree: Tree) -> TsNodeView:
     root = tree.root_node
     return TsNodeView.from_node(root)
 
 def parse_with_callback(callback: Callable[[int, Tuple[int, int]], bytes]) -> Tree:
-    cpp_lang = Language(language())
+    cpp_lang = CPP_LANGUAGE
     parser = Parser(language=cpp_lang)
     tree = parser.parse(callback)
     return tree
 
 def parse_content(content: bytes) -> Tree:
-    cpp_lang = Language(language())
+    cpp_lang = CPP_LANGUAGE
     parser = Parser(language=cpp_lang)
     tree = parser.parse(content)
     return tree
@@ -115,6 +123,20 @@ def create_read_callback(
         return _read_from_immutable
     else:
         return _read_from_mutable
+
+def capture_node(base_node: Node, s_expression: str) -> dict[str, list[Node]]:
+    """ using s_expression to find target_nodes """
+    query = Query(CPP_LANGUAGE, s_expression)
+    cursor = QueryCursor(query)
+    captures = cursor.captures(base_node)
+    return captures
+
+def match_node(base_node: Node, s_expression: str) -> list[tuple[int, dict[str, list[Node]]]]:
+    """ using s_expression to match target_nodes """
+    query = Query(CPP_LANGUAGE, s_expression)
+    cursor = QueryCursor(query)
+    captures = cursor.matches(base_node)
+    return captures
 
 def is_content_in_file(
     file_path: str, 

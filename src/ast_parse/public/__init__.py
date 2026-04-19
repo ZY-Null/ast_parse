@@ -23,4 +23,8 @@ __all__ = [
     "is_content_in_files",
     "is_contents_in_files",
     "DumpProcess",
+    "CPP_LANGUAGE",
+    "capture_node",
+    "match_node",
+    "QUERY_MODE",
 ]
