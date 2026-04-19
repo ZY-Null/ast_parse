@@ -29,8 +29,8 @@ def run_task():
 def get_function_by_symbol(*args):
     if len(args) < 2:
         raise ValueError(f"param input err, usage: `{Path(__file__).name} \"get_symbol\" <symbol_name> <project_path>`")
-    symbol_name = args[1]
-    project_path = Path(args[2])
+    symbol_name = args[0]
+    project_path = Path(args[1])
     DumpProcess.set_process_type("DUMP")
     return collect_func_definition_from_prj(symbol=symbol_name, prj_path=project_path)
 
@@ -45,8 +45,8 @@ def get_element_by_position(*args):
 def call_func_called_by_symbol(*args):
     if len(args) < 2:
         raise ValueError(f"param input err, usage: `{Path(__file__).name} \"get_called\" <symbol_name> <project_path>`")
-    symbol_name = args[1]
-    project_path = Path(args[2])
+    symbol_name = args[0]
+    project_path = Path(args[1])
     DumpProcess.set_process_type("DUMP")
     return get_function_called_by_target_symbol(symbol=symbol_name, prj_path=project_path)
 
