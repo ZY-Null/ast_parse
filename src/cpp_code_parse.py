@@ -17,7 +17,7 @@ def run_task():
     handles = {
         "get_symbol": get_function_by_symbol,
         "get_position": get_element_by_position,
-        "get_called": get_function_called_by_target_symbol,
+        "get_called": call_func_called_by_symbol,
     }
     oper_type = params[1]
     args = params[2:]
@@ -41,6 +41,14 @@ def get_element_by_position(*args):
     line_num = int(args[1])
     DumpProcess.set_process_type("DUMP")
     return collect_code_element_by_pos(file_path=file, line_num=line_num)
+
+def call_func_called_by_symbol(*args):
+    if len(args) < 2:
+        raise ValueError(f"param input err, usage: `{Path(__file__).name} \"get_called\" <symbol_name> <project_path>`")
+    symbol_name = args[1]
+    project_path = Path(args[2])
+    DumpProcess.set_process_type("DUMP")
+    return get_function_called_by_target_symbol(symbol=symbol_name, prj_path=project_path)
 
 if __name__ == "__main__":
     exc_result = run_task()
